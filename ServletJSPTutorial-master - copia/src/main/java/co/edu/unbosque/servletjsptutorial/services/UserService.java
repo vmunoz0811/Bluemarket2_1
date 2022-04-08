@@ -41,8 +41,8 @@ public class UserService {
         os.close();
     }*/
     public void createUser(String username, String password, String path) throws IOException {
-        String newLine =  username + "," + password +","+"0"+"\n";
-        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
+        String newLine = username + "," + password +"\n";
+        String fullpath = path.replace("ServletJSPTutorial-1.0-SNAPSHOT"+File.separator,"users.csv")+ "classes"+File.separator+"Users.csv";
         System.out.println("Users:"+fullpath);
         FileOutputStream os = new FileOutputStream(fullpath, true);
         os.write(newLine.getBytes());
