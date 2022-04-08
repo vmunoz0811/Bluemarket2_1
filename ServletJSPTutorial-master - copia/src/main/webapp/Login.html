@@ -8,7 +8,7 @@
     <title>BLUEMARKET</title>
     <link rel="shortcut icon" href="./images/logo_BM.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
 
     <meta name="theme-color" content="#2091F9">
 
@@ -36,9 +36,9 @@
   <section class="form-register">
     <h4 >Ingresa a tu cuenta</h4>
     <form action="./login" method="post">
-    <input class="controls" type="username" name="username" id="username" placeholder="Ingrese su nombre de usuario">
-    <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
-    <a href="index2.html"><input class="button" type="submit" value="Entrar"></a>
+      username: <input class="controls" type="text" name="username" id="username" placeholder="Ingrese su nombre de usuario" required />
+      password:<input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" required />
+   <input class="button" type="submit" value="Login">
     </form>
   </section>
 

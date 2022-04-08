@@ -34,9 +34,17 @@ public class UserService {
         return users;
     }
 
-    public void createUser(String username, String password, String path) throws IOException {
+    /*public void createUser(String username, String password, String path) throws IOException {
         String newLine = "\n" + username + "," + password + ",customer";
         FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
+        os.write(newLine.getBytes());
+        os.close();
+    }*/
+    public void createUser(String username, String password, String path) throws IOException {
+        String newLine =  username + "," + password +","+"0"+"\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
+        System.out.println("Users:"+fullpath);
+        FileOutputStream os = new FileOutputStream(fullpath, true);
         os.write(newLine.getBytes());
         os.close();
     }

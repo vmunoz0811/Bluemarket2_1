@@ -20,7 +20,7 @@ public class SignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-            new UserService().createUser(username, password, getServletContext().getRealPath("") + File.separator);
+            new UserService().createUser(username, password, getServletContext().getRealPath("../resources/users.csv") + File.separator);
         } catch (Exception e) {
             e.printStackTrace();
         }
