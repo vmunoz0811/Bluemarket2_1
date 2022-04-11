@@ -17,7 +17,7 @@ public class walletServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        String name = request.getParameter("name");
+        Object name =request.getParameter("name");
 
         List<User> users = new UserService().getUsers();
 

@@ -1,4 +1,4 @@
-<%--
+<% String nam; %><%--
   Created by IntelliJ IDEA.
   User: vmuno
   Date: 10/04/2022
@@ -46,9 +46,7 @@
 
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-
-            name:<h3 class="titulo" type="text" name="name" id="name"><%=request.getAttribute("name")%></h3>
-            <h3 class="titulo" ><%=request.getAttribute("Lastname")%></h3>
+        name: <h3 class="titulo" ><%= request.getAttribute("name")%></h3>
         </div>
         <div class="perfil-usuario-footer">
             <%--@declare id="typesart"--%><h3 class="titulo">Crea una publicación</h3>
@@ -64,17 +62,16 @@
                 &nbsp;
                 <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
                     <input type="file" name="imagen1"/>
-                    &nbsp;
+                    &nb
                     <input class = "button" type="submit" name="subir-imagen" value="Publicar" />
                 </form>
 
         </div>
         <br>
         <div class="perfil-usuario-footer">
-            <form action="./walletServlet" method="post">
             <h3 class="titulo">Billetera</h3>
-            <input class="button" type="submit" value="Ver billetera">
-            </form>
+            <a href="Wallet.html" class="nav__links">Ver billetera</a>
+
         </div>
 
         <div class="redes-sociales">
