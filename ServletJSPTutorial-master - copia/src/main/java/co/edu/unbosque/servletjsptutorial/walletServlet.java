@@ -18,12 +18,11 @@ public class walletServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String name = request.getParameter("name");
-        String lastname = request.getParameter("lastname");
 
         List<User> users = new UserService().getUsers();
 
         User userFounded = users.stream()
-                .filter(user -> name.equals(user.getName()) && lastname.equals(user.getLastname()))
+                .filter(user -> name.equals(user.getName()))
                 .findFirst()
                 .orElse(null);
 

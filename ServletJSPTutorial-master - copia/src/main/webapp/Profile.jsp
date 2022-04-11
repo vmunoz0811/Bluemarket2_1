@@ -46,8 +46,9 @@
 
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-          name: <h3 class="titulo" ><%=request.getAttribute("name")%></h3>
-          lastname:  <h3 class="titulo" ><%=request.getAttribute("Lastname")%></h3>
+
+            name:<h3 class="titulo" type="text" name="name" id="name"><%=request.getAttribute("name")%></h3>
+            <h3 class="titulo" ><%=request.getAttribute("Lastname")%></h3>
         </div>
         <div class="perfil-usuario-footer">
             <%--@declare id="typesart"--%><h3 class="titulo">Crea una publicación</h3>
