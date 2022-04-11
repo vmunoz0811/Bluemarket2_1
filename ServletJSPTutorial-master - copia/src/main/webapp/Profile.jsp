@@ -46,8 +46,8 @@
 
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-            <h3 class="titulo" ><%=request.getAttribute("name")%></h3>
-            <h3 class="titulo" ><%=request.getAttribute("lastname")%></h3>
+          name: <h3 class="titulo" ><%=request.getAttribute("name")%></h3>
+          lastname:  <h3 class="titulo" ><%=request.getAttribute("Lastname")%></h3>
         </div>
         <div class="perfil-usuario-footer">
             <%--@declare id="typesart"--%><h3 class="titulo">Crea una publicación</h3>
@@ -70,20 +70,15 @@
         </div>
         <br>
         <div class="perfil-usuario-footer">
-            <%--@declare id="typesart"--%><h3 class="titulo">Billetera</h3>
-            <label for="typesArt"> Tipos de arte </label> &nbsp; &nbsp;
-            <select name = "typesArt">
-                <option value="abstractArt">Arte Abstracto</option>
-                <option value="cubism">Cubismo</option>
-                <option value="photography">Fotografía</option>
-                <option value="impresionism">Impresionismo</option>
-                <option value="renaissance">Renacimiento</option>
-                <option value="xxcentury">Siglo XX</option>
-            </select>
+            <form action="./walletServlet" method="post">
+            <h3 class="titulo">Billetera</h3>
+            <input class="button" type="submit" value="Ver billetera">
+            </form>
+        </div>
 
         <div class="redes-sociales">
-            <a href="" class="boton-redes facebook fab fa-facebook-f" ><i class="icon-facebook" src="./images/mailicon.png"></i></a>
-            <a href="index.html" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter" src="./images/exitIcon"></i></a>
+            <a href="" class="boton-redes facebook fab fa-facebook-f"></a>
+            <a href="index.html" class="boton-redes twitter fab fa-twitter"></a>
         </div>
     </div>
 </section>

@@ -16,9 +16,9 @@ public class ProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String username = request.getParameter("username");
-        request.setAttribute("username", username);
+       // request.setAttribute("username", username);
         String password = request.getParameter("password");
-        String name = request.getParameter("name");
+       /* String name = request.getParameter("name");
         request.setAttribute("name", name);
         String lastname = request.getParameter("lastname");
         request.setAttribute("lastname", lastname);
@@ -26,23 +26,24 @@ public class ProfileServlet extends HttpServlet {
         request.setAttribute("mail", mail);
         String fcoins = request.getParameter("fcoins");
         request.setAttribute("fcoins", fcoins);
-
+*/
         List<User> users = new UserService().getUsers();
 
         User userFounded = users.stream()
-                .filter(user -> name.equals(user.getName()) && lastname.equals(user.getLastname()) && mail.equals(user.getMail()) && fcoins.equals(user.getFcoins()) && username.equals(user.getUsername()) && password.equals(user.getPassword()))
+                .filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()))
                 .findFirst()
                 .orElse(null);
 
         if (userFounded != null) {
-            request.setAttribute("username", username);
-            request.setAttribute("name", name);
-            request.setAttribute("lastname", lastname);
-            request.setAttribute("mail", mail);
-            request.setAttribute("fcoins", fcoins);
-            Cookie cookie = new Cookie("username", userFounded.getUsername());
+
+            Cookie cookie = new Cookie("name", userFounded.getName());
             cookie.setMaxAge(20);
             response.addCookie(cookie);
+
+            Cookie cookie1 = new Cookie("Lastname", userFounded.getLastname());
+            cookie1.setMaxAge(20);
+            response.addCookie(cookie1);
+
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("./Profile.jsp");
             dispatcher.forward(request, response);

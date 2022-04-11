@@ -30,11 +30,15 @@ public class LogInServlet extends HttpServlet {
 
         if (userFounded != null) {
 
-            Cookie cookie = new Cookie("username", userFounded.getUsername());
+            Cookie cookie = new Cookie("name", userFounded.getName());
             cookie.setMaxAge(20);
             response.addCookie(cookie);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./index2.html");
+            Cookie cookie1 = new Cookie("Lastname", userFounded.getLastname());
+            cookie1.setMaxAge(20);
+            response.addCookie(cookie1);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./Profile.jsp");
             dispatcher.forward(request, response);
 
         } else {
