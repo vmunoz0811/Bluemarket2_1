@@ -5,21 +5,33 @@ import com.opencsv.bean.CsvBindByName;
 public class User {
 
     @CsvBindByName
+    private String name;
+
+    @CsvBindByName
+    private String lastname;
+
+    @CsvBindByName
+    private String mail;
+
+    @CsvBindByName
     private String username;
 
     @CsvBindByName
     private String password;
 
     @CsvBindByName
-    private String role;
+    private String fcoins;
 
     public User() {
     }
 
-    public User(String username, String password, String role) {
+    public User(String name, String lastname, String mail, String username, String password, String fcoins) {
+        this.name = name;
+        this.lastname = lastname;
+        this.mail = mail;
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.fcoins = fcoins;
     }
 
     public String getUsername() {
@@ -38,20 +50,47 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getFcoins() {
+        return fcoins;
+    }
+
+    public void setFcoins(String fcoins) {
+        this.fcoins = fcoins;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", mail='" + mail + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
+                ", fcoins='" + fcoins + '\'' +
                 '}';
     }
 }

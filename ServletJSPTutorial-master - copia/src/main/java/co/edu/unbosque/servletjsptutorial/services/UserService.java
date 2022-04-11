@@ -33,18 +33,15 @@ public class UserService {
 
         return users;
     }
-
     /*public void createUser(String username, String password, String path) throws IOException {
         String newLine = "\n" + username + "," + password + ",customer";
         FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
         os.write(newLine.getBytes());
         os.close();
     }*/
-    public void createUser(String username, String password, String path) throws IOException {
-        String newLine = username + "," + password +"\n";
-        String fullpath = path.replace("ServletJSPTutorial-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"users.csv";
-        System.out.println("Users:"+fullpath);
-        FileOutputStream os = new FileOutputStream(fullpath, true);
+    public void createUser(String username, String name, String lastname, String mail, String password, String Fcoins, String path) throws IOException {
+        String newLine =  username + "," + name + ","+lastname+ "," + mail + "," + password +","+ Fcoins +"\n";
+        FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
         os.write(newLine.getBytes());
         os.close();
     }

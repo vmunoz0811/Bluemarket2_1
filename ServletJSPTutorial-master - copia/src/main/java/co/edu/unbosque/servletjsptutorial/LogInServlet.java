@@ -29,9 +29,8 @@ public class LogInServlet extends HttpServlet {
                 .orElse(null);
 
         if (userFounded != null) {
-            request.setAttribute("role", userFounded.getRole());
 
-            Cookie cookie = new Cookie("role", userFounded.getRole());
+            Cookie cookie = new Cookie("username", userFounded.getUsername());
             cookie.setMaxAge(20);
             response.addCookie(cookie);
 
