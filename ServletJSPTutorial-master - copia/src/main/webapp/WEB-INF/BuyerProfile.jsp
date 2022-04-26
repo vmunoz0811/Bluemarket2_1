@@ -63,8 +63,7 @@
         <div class="perfil-usuario-footer">
                 <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
                     <input type="file" name="imagen1"/>
-
-                    <input class = "button" type="submit" name="subir-imagen" value="Publicar" />
+                    <input class = "button" type="submit" name="subir-imagen" accept="image/*" value="Publicar" />
                 </form>
         </div>
 

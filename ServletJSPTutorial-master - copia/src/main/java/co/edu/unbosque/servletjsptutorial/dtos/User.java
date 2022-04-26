@@ -22,16 +22,28 @@ public class User {
     @CsvBindByName
     private String fcoins;
 
+    @CsvBindByName
+    private String profilePhoto;
+
     public User() {
     }
 
-    public User(String name, String lastname, String mail, String username, String password, String fcoins) {
+    public User(String name, String lastname, String mail, String username, String password, String fcoins,String profilePhoto) {
         this.name = name;
         this.lastname = lastname;
         this.mail = mail;
         this.username = username;
         this.password = password;
         this.fcoins = fcoins;
+        this.profilePhoto= profilePhoto;
+    }
+
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
     }
 
     public String getUsername() {

@@ -33,13 +33,14 @@ public class UserService {
 
         return users;
     }
-    /*public void createUser(String username, String password, String path) throws IOException {
-        String newLine = "\n" + username + "," + password + ",customer";
+
+    public void createUser(String username, String name, String lastname, String mail, String password, String Fcoins, String filename, String path) throws IOException {
+        String newLine =  username + "," + name + ","+lastname+ "," + mail + "," + password +","+ Fcoins +","+filename+"\n";
         FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
         os.write(newLine.getBytes());
         os.close();
-    }*/
-    public void createUser(String username, String name, String lastname, String mail, String password, String Fcoins, String path) throws IOException {
+    }
+    public void createNFT(String username, String name, String lastname, String mail, String password, String Fcoins, String path) throws IOException {
         String newLine =  username + "," + name + ","+lastname+ "," + mail + "," + password +","+ Fcoins +"\n";
         FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
         os.write(newLine.getBytes());

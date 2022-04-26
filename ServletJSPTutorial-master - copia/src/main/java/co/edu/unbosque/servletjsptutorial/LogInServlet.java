@@ -31,13 +31,14 @@ public class LogInServlet extends HttpServlet {
         if (userFounded != null) {
             request.setAttribute("name", userFounded.getName());
 
+
             Cookie cookie = new Cookie("name", userFounded.getName());
             cookie.setMaxAge(20);
             response.addCookie(cookie);
 
 
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./Profile.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./ArtistProfile.jsp");
             dispatcher.forward(request, response);
 
         } else {

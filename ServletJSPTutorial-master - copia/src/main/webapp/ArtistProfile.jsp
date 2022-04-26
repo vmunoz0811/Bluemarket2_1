@@ -1,3 +1,4 @@
+
 <% String nam; %><%--
   Created by IntelliJ IDEA.
   User: vmuno
@@ -39,7 +40,25 @@
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
             <div class="perfil-usuario-avatar">
-                <img src="./images/profileImage.png" alt="img-avatar">
+                <script>
+                    var imagesDiv = document.getElementById("");
+
+                    // Making a fetch call to the servlet
+                    fetch("list-files")
+                        .then(response => response.json())
+                        .then(images => {
+                            images.map(image => {
+                                // Creating the image element in DOM
+                                let imgElem = document.createElement("img");
+                                imgElem.src = "./" + image;
+                                imgElem.width = 200;
+
+                                // Attaching element to DIV
+                                imagesDiv.appendChild(imgElem);
+                            });
+                        });
+                </script>
+               <img target ="./uploads/<%= request.getAttribute("name")%>" alt="img-avatar">
             </div>
         </div>
     </div>
@@ -63,8 +82,7 @@
         <div class="perfil-usuario-footer">
                 <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
                     <input type="file" name="imagen1"/>
-
-                    <input class = "button" type="submit" name="subir-imagen" value="Publicar" />
+                    <input class = "button" type="submit" name="subir-imagen" accept="image/*" value="Publicar" />
                 </form>
         </div>
 
@@ -75,9 +93,21 @@
 
         </div>
 
+        <br>
+        <div class="perfil-usuario-footer">
+            <h3 class="titulo">Regresar</h3>
+            <a href="index2.html" class="nav__links">Volver</a>
+        </div>
+        <br>
+
+        <div class="perfil-usuario-footer">
+            <h3 class="titulo">Tus colecciones</h3>
+            <a href="CollectionsArtist.html" class="nav__links">Ver</a>
+        </div>
+
         <div class="redes-sociales">
-            <a href="" class="boton-redes facebook fab fa-facebook-f"></a>
-            <a href="index.html" class="boton-redes twitter fab fa-twitter"></a>
+            <a href="" class="boton-redes mail fab fa-facebook-f"></a>
+            <a href="index.html" class="boton-redes exit fab fa-twitter"></a>
         </div>
     </div>
 </section>

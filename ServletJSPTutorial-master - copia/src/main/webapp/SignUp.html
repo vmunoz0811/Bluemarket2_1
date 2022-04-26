@@ -35,13 +35,20 @@
 
   <section class="form-register">
     <h4 >Registra tu usuario</h4>
-    <form action="./signup" method="post">
+    <form action="./signup" method="post" enctype="multipart/form-data">
     name:<input class="controls" type="text" name="name" id="name" placeholder="Ingrese su Nombre" required>
     lastname:<input class="controls" type="text" name="lastname" id="lastname" placeholder="Ingrese su Apellido" required>
     mail:<input class="controls" type="email" name="mail" id="mail" placeholder="Ingrese su Correo" required>
     username: <input class="controls" type="text" name="username" id="username" placeholder="Ingrese su nombre de usuario" required />
     password:<input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" required />
+      role:<select typeof="text" name="role" class="controls" value="" id="role" required>
+        <option value="artist">Seleccione</option>
+        <option value="artist">Artista</option>
+        <option value="buyer">Comprador</option>
+      </select>
       fcoins:<input class="controls" type="number" name="fcoins" id="fcoins" placeholder="Cantidad de Fcoins (Recomendado: 0)" min=0 required />
+      imagenPerfil:<input type="file" name="profilePhoto" id="profilePhoto" accept="image/*" required/>
+
       <input class="button" type="submit" value="Registrar">
     </form>
     <p><a href="Login.html">¿Ya tienes una cuenta?</a></p>
